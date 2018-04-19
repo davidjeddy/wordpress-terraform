@@ -47,7 +47,7 @@ Web: https://davidjeddy.com
 
 ### Pre-flight
 
-Create a key pair in your (AWS console)[https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#KeyPairs:sort=keyName], call it `aws`.
+Create a key pair in your AWS console in the __us-east-2__ region (Very important!), call the key pair __aws__.
 Download the `aws.pem` keypair
 
 
