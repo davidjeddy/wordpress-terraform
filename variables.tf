@@ -3,7 +3,11 @@ variable "region" {
 }
 
 variable "wordpress-images" {
-  type = "string"
+  type = "map"
+
+  default = {
+    us-east-2 = "ami-43043126"
+  }
 }
 
 variable "local_ip" {
