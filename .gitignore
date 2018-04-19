@@ -1,3 +1,6 @@
+# Security
+*.pem
+
 # Compiled files
 *.tfstate
 *.tfstate.backup

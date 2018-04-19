@@ -1,4 +1,4 @@
-# bitnami wordpress server
+# wordpress web server instance
 resource "aws_instance" "wordpress" {
   ami = "${lookup(var.wordpress-images, var.region)}"
 
@@ -12,7 +12,7 @@ resource "aws_instance" "wordpress" {
 
   availability_zone = "${lookup(var.zones, var.region)}"
 
-  key_name = "wordpress"
+  key_name = "aws"
 
   # add a public IP address
   associate_public_ip_address = true

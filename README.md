@@ -21,7 +21,20 @@ Twitter: https://twitter.com/David_J_Eddy
 Web: https://davidjeddy.com
 
 # Usage
+## Dependencies
+Create a key pair in your (AWS console)[https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#KeyPairs:sort=keyName], call it `aws`.
+Download the aws.pem keypair
+
 cd /to/your/project/root/parent/directory
 git clone https://github.com/davidjeddy/wordpress-terraform.git
 cd wordpress-terraform
+
+## Start
 terraform init
+cp ~/your/downloads/aws.pem ./aws.pem
+terraform  plan --out terraform.plan --var-file=./variables.tfvars
+terraform apply terraform.plan
+
+## End
+When you are all done remove all the created resources using
+terraform destroy
