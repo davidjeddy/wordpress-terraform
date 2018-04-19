@@ -3,7 +3,7 @@ resource "aws_instance" "wordpress" {
   ami = "${lookup(var.wordpress-images, var.region)}"
 
   # free tier instance
-  instance_type = "t2-micro"
+  instance_type = "t2.micro"
 
   # list of securit groups for the instance
   security_groups = [
