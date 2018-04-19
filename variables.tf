@@ -1,4 +1,4 @@
-variable "local_ip" {
+variable "region" {
   type = "string"
 }
 
@@ -11,9 +11,9 @@ variable "local_ip" {
 }
 
 variable "zones" {
-  type = "string"
+  type = "map"
 
   default = {
-    "us-east-2 = "us-east-2b"
+    us-east-2 = "us-east-2b"
   }
 }
