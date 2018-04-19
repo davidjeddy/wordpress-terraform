@@ -18,6 +18,6 @@ variable "zones" {
   type = "map"
 
   default = {
-    us-east-2 = "us-east-2b"
+    "us-east-2" = "us-east-2a"
   }
 }

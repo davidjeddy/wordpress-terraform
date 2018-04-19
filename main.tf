@@ -10,7 +10,7 @@ resource "aws_instance" "wordpress" {
     "${aws_security_group.wordpress_security_group.name}",
   ]
 
-  availability_zone = "$(lookup(var.zones, var.region))"
+  availability_zone = "${lookup(var.zones, var.region)}"
 
   key_name = "wordpress"
 
