@@ -1,6 +1,9 @@
 #!/bin/#!/usr/bin/env bash
-ping ${TARGET}
-wget http://${TARGET}
-wget http://www.${TARGET}
-wget https://${TARGET}
-wget https://www.${TARGET}
+ping ${TARGET_IP}
+ssh -i admin@${TARGET_IP}
+
+ping ${TARGET_DNS}
+wget http://${TARGET_DNS}
+wget http://www.${TARGET_DNS}
+wget https://${TARGET_DNS}
+wget https://www.${TARGET_DNS}
