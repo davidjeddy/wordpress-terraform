@@ -24,7 +24,8 @@ resource "aws_instance" "wordpress" {
   }
 
   tags {
-    application = "wordpress"
+    Name = "wordpress"
+    stage = "demo"
     language = "php"
     service = "web"
   }
