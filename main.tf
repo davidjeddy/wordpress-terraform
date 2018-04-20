@@ -24,7 +24,9 @@ resource "aws_instance" "wordpress" {
   }
 
   tags {
-    name = "Wordpress Server"
+    application = "wordpress"
+    language = "php"
+    service = "web"
   }
 }
 
