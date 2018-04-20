@@ -10,7 +10,7 @@ resource "aws_security_group" "wordpress_security_group" {
 # allow ssh access from port 22 from variables.tfvars::var.local_ip
 resource "aws_security_group_rule" "ingress_ssh" {
   security_group_id = "${aws_security_group.wordpress_security_group.id}"
-  type = "egress"
+  type = "ingress"
   cidr_blocks = ["${var.local_ip}/32"]
   protocol = "tcp"
   from_port = 22
@@ -35,16 +35,6 @@ resource "aws_security_group_rule" "ingress_https" {
   protocol = "tcp"
   from_port = 443
   to_port = 443
-}
-
-# allow reply traffic from the internet to the server on ephemeral ports
-resource "aws_security_group_rule" "ingress_reply" {
-  security_group_id = "${aws_security_group.wordpress_security_group.id}"
-  type = "ingress"
-  cidr_blocks = ["0.0.0.0/0"]
-  protocol = "tcp"
-  from_port = 1024
-  to_port = 65535
 }
 
 # EXGRESS
@@ -74,6 +64,7 @@ resource "aws_security_group_rule" "ingress_icmp" {
 }
 
 # EGRESS
+
 resource "aws_security_group_rule" "egress_icmp" {
   security_group_id = "${aws_security_group.wordpress_security_group.id}"
   type = "egress"

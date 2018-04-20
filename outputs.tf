@@ -3,5 +3,5 @@ output "wordpress_public_ip" {
 }
 
 output "wordpress_dns" {
-  value = "${aws_instance.wordpress.public_dns}"
+  value = "${aws_route53_record.www.name}"
 }
