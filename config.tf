@@ -1,4 +1,4 @@
 provider "aws" {
   profile = "default"
-  region  = "${module.compute.region}"
+  region  = "${var.region}"
 }

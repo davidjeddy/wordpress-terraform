@@ -1,3 +1,3 @@
 output "public_dns" {
-  value = "${aws_route53_record.www.value}"
+  value = "${aws_route53_record.www.name}"
 }
