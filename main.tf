@@ -9,7 +9,7 @@ module "compute" {
 }
 
 module "dns" {
-  source   = "./iaas_provider/aws/dns"
+  source = "./iaas_provider/aws/dns"
 
   public_ip = "${var.public_ip}"
 }
