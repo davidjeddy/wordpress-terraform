@@ -5,5 +5,5 @@ output "wordpress_public_ip" {
 
 output "wordpress_dns" {
   description = "Public DNS to access the web resource."
-  value       = "${module.dns.www.name}"
+  value       = "${module.dns.public_dns}"
 }
