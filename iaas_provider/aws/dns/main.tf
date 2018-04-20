@@ -3,5 +3,5 @@ resource "aws_route53_record" "www" {
   name    = "davidjeddy.me"
   type    = "A"
   ttl     = "60"
-  records = ["${var.public_ip}"]
+  records = ["${var.elastic_ip}"]
 }

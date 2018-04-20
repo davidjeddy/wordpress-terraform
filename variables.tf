@@ -7,6 +7,7 @@ variable "wordpress-images" {
   default = {
     us-east-2 = "ami-1942677c"
   }
+
   description = "The machine image to use to create the compute instance resource."
   type        = "map"
 }
@@ -20,11 +21,7 @@ variable "zones" {
   default = {
     "us-east-2" = "us-east-2a"
   }
+
   description = "Availablity zone within the region resoures will be provisioned into."
   type        = "map"
-}
-
-variable "public_ip" {
-  description = "Public IP to assign to DNS record."
-  type        = "string"
 }
