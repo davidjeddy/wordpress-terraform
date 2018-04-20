@@ -19,14 +19,14 @@ resource "aws_instance" "wordpress" {
 
   root_block_device = {
     "delete_on_termination" = false
-    "volume_type" = "standard"
-    "volume_size" = 40
+    "volume_type"           = "standard"
+    "volume_size"           = 40
   }
 
   tags {
-    Name = "wordpress"
-    stage = "demo"
+    Name     = "wordpress"
+    stage    = "demo"
     language = "php"
-    service = "web"
+    service  = "web"
   }
 }
