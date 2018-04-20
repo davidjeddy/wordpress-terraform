@@ -32,3 +32,11 @@ resource "aws_eip" "wordpress_eip" {
   instance = "${aws_instance.wordpress.id}"
   vpc = false
 }
+
+resource "aws_route53_record" "www" {
+  zone_id = "${aws_route53_zone.primary.zone_id}"
+  name    = "davidjeddy.me"
+  type    = "A"
+  ttl     = "300"
+  records = ["${aws_eip.wordpress_eip.public_ip}"]
+}
