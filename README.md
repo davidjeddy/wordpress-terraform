@@ -48,7 +48,7 @@ Web: https://davidjeddy.com
 ### Pre-flight
 
 Create a key pair in your AWS console in the __us-east-2__ region (Very important!), call the key pair __aws__.
-Download the `aws.pem` keypair
+Download the `aws.pem` keypair to this project root.
 
 
 ### Initialize
