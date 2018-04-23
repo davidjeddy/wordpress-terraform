@@ -6,7 +6,7 @@ resource "aws_instance" "wp" {
   instance_type = "t2.micro"
 
   # list of security groups for the instance
-  security_groups = [
+  vpc_security_group_ids = [
     "${aws_security_group.wp_security_group.name}",
   ]
 
