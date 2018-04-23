@@ -15,3 +15,11 @@ module "dns" {
 
   elastic_ip = "${module.compute.public_ip}"
 }
+
+module "datastore" {
+  source "./iaas_provider/aws/datastore/sql/rds/mariadb"
+
+  #config vars
+  
+  ec2_private_ip = "${module.ec2.private_ip}"
+}
