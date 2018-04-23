@@ -7,7 +7,7 @@ resource "aws_instance" "wp" {
 
   # list of security groups for the instance
   vpc_security_group_ids = [
-    "${aws_security_group.wp_security_group.name}",
+    "${aws_security_group.wp_security_group.id}"
   ]
 
   availability_zone = "${lookup(var.zones, var.region)}"
