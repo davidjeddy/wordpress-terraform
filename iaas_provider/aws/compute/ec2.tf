@@ -1,6 +1,6 @@
 # wp web server instance
 resource "aws_instance" "wp" {
-  ami = "${lookup(var.wp_images, var.region)}"
+  ami = "${lookup(var.ami_images, var.region)}"
 
   # free tier instance
   instance_type = "t2.micro"

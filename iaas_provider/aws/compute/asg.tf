@@ -6,7 +6,7 @@ module "asg" {
   # launch configuration (LC)
   lc_name = "wp_lc"
 
-  image_id      = "${lookup(var.wp_images, var.region)}"
+  image_id      = "${lookup(var.ami_images, var.region)}"
   instance_type = "t2.micro"
 
   # list of security groups for the instance

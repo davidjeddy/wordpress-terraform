@@ -8,7 +8,7 @@ variable "region" {
   type        = "string"
 }
 
-variable "wp_images" {
+variable "ami_images" {
   default = {
     us-east-2 = "ami-1942677c"
   }

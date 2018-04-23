@@ -9,7 +9,7 @@ module "compute" {
 
   # EC2
 
-  wp_images = "${var.wp_images}"
+  ami_images = "${var.ami_images}"
   region    = "${var.region}"
   local_ip  = "${var.local_ip}"
 }
