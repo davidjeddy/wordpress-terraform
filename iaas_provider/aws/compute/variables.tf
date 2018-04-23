@@ -17,7 +17,7 @@ variable "local_ip" {
   type        = "string"
 }
 
-variable "zones" {
+variable "availability_zone" {
   default = {
     "us-east-2" = "us-east-2a"
   }

@@ -17,9 +17,13 @@ variable "wp_images" {
   type        = "map"
 }
 
-variable "zones" {
+variable "availability_zone" {
   default = {
-    "us-east-2" = "us-east-2a"
+    "us-east-2" = [
+      "us-east-2a",
+      "us-east-2b",
+      "us-east-2c",
+    ]
   }
 
   description = "Availablity zone within the region resoures will be provisioned into."
