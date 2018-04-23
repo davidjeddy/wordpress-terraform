@@ -21,5 +21,5 @@ module "datastore" {
 
   #config vars
 
-  ec2_private_ip = "${module.compute.private_ip}"
+  aws_instance_wp_private_ips = "${module.compute.aws_instance_wp_private_ips}"
 }

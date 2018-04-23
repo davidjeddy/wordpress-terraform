@@ -5,7 +5,7 @@ resource "aws_instance" "wp" {
   # free tier instance
   instance_type = "t2.micro"
 
-  # list of securit groups for the instance
+  # list of security groups for the instance
   security_groups = [
     "${aws_security_group.wp_security_group.name}",
   ]
