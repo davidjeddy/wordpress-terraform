@@ -1,13 +1,3 @@
-variable "local_ip" {
-  description = "Local IP, used to limit SSH access to the compute instance."
-  type        = "string"
-}
-
-variable "region" {
-  description = "The geographic region the resources will be provisioned into."
-  type        = "string"
-}
-
 variable "ami_images" {
   default = {
     us-east-2 = "ami-1942677c"
@@ -28,6 +18,16 @@ variable "availability_zone" {
 
   description = "Availablity zone within the region resoures will be provisioned into."
   type        = "map"
+}
+
+variable "local_ip" {
+  description = "Local IP, used to limit SSH access to the compute instance."
+  type        = "string"
+}
+
+variable "region" {
+  description = "The geographic region the resources will be provisioned into."
+  type        = "string"
 }
 
 variable "ssl_cert" {

@@ -18,7 +18,7 @@ module "asg" {
     {
       volume_size = "8"
       volume_type = "gp2"
-    }
+    },
   ]
 
   # auto scaling group
@@ -29,5 +29,4 @@ module "asg" {
   max_size                  = 1
   desired_capacity          = 1
   wait_for_capacity_timeout = 0
-
 }

@@ -6,7 +6,7 @@ variable "region" {
 }
 
 variable "security_group" {
-  default     = "arn:aws:acm:us-east-2:530589290119:certificate/beefeccf-b0ff-44ca-925b-d91484023ca2"
+  default     = ""
   description = "Security groups to assign the ASG to."
   type        = "string"
 }
