@@ -4,7 +4,7 @@
 
 Install wp in the AWS Cloud using Terraform
 
-![wp Landing Page](./docs/imgs/wordpress_landing_page.png "wp Landing Page")
+![wp Landing Page](./docs/imgs/wp_landing_page.png "wp Landing Page")
 
 
 ## Credit

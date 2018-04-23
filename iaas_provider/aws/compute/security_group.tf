@@ -1,5 +1,5 @@
-resource "aws_security_group" "wordpress_security_group" {
-  name        = "wordpress_security_group"
+resource "aws_security_group" "wp_security_group" {
+  name        = "wp_security_group"
   description = "Control the access to the wp server."
 }
 
@@ -9,7 +9,7 @@ resource "aws_security_group" "wordpress_security_group" {
 
 # allow ssh access from port 22 from variables.tfvars::var.local_ip
 resource "aws_security_group_rule" "ingress_ssh" {
-  security_group_id = "${aws_security_group.wordpress_security_group.id}"
+  security_group_id = "${aws_security_group.wp_security_group.id}"
   type              = "ingress"
   cidr_blocks       = ["${var.local_ip}/32"]
   protocol          = "tcp"
@@ -19,7 +19,7 @@ resource "aws_security_group_rule" "ingress_ssh" {
 
 # allow http access on port 80 for all address/ports
 resource "aws_security_group_rule" "ingress_http" {
-  security_group_id = "${aws_security_group.wordpress_security_group.id}"
+  security_group_id = "${aws_security_group.wp_security_group.id}"
   type              = "ingress"
   cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "tcp"
@@ -29,7 +29,7 @@ resource "aws_security_group_rule" "ingress_http" {
 
 # allow https access on port 443 for all address/ports
 resource "aws_security_group_rule" "ingress_https" {
-  security_group_id = "${aws_security_group.wordpress_security_group.id}"
+  security_group_id = "${aws_security_group.wp_security_group.id}"
   type              = "ingress"
   cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "tcp"
@@ -41,7 +41,7 @@ resource "aws_security_group_rule" "ingress_https" {
 
 # allow reply traffic from the server to the internet on ephemeral ports
 resource "aws_security_group_rule" "engress_reply" {
-  security_group_id = "${aws_security_group.wordpress_security_group.id}"
+  security_group_id = "${aws_security_group.wp_security_group.id}"
   type              = "egress"
   cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "all"
@@ -55,7 +55,7 @@ resource "aws_security_group_rule" "engress_reply" {
 
 # allow ICMP access from the internet
 resource "aws_security_group_rule" "ingress_icmp" {
-  security_group_id = "${aws_security_group.wordpress_security_group.id}"
+  security_group_id = "${aws_security_group.wp_security_group.id}"
   type              = "ingress"
   cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "icmp"
@@ -66,7 +66,7 @@ resource "aws_security_group_rule" "ingress_icmp" {
 # EGRESS
 
 resource "aws_security_group_rule" "egress_icmp" {
-  security_group_id = "${aws_security_group.wordpress_security_group.id}"
+  security_group_id = "${aws_security_group.wp_security_group.id}"
   type              = "egress"
   cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "icmp"
