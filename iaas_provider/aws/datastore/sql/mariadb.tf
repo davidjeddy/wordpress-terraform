@@ -7,10 +7,5 @@ resource "aws_db_instance" "wp_db" {
   name                 = "wp_db"
   username             = "wp_db_user"
   password             = "wp_db_pass"
-  parameter_group_name = "default.mysql10.2"
-
-  # list of security groups for the instance
-  security_groups = [
-    "${aws_security_group.wp_db_security_group.name}",
-  ]
+  parameter_group_name = "default.mariadb10.2"
 }

@@ -1,4 +1,4 @@
-resource "aws_db_security_group" "wp_db_security_group" {
+resource "aws_security_group" "wp_db_security_group" {
   name        = "wp_db_security_group"
   description = "Control access to the wp database server."
 }
@@ -9,7 +9,7 @@ resource "aws_db_security_group" "wp_db_security_group" {
 
 # allow ssh access from port 3306 (sql) from ${var.aws_instance_wp_private_ips}/32
 resource "aws_security_group_rule" "ingress_sql" {
-  security_group_id = "${aws_db_security_group.wp_db_security_group.id}"
+  security_group_id = "${aws_security_group.wp_db_security_group.id}"
   type              = "ingress"
   cidr_blocks       = ["${var.aws_instance_wp_private_ips}/32"]
   protocol          = "tcp"
@@ -21,7 +21,7 @@ resource "aws_security_group_rule" "ingress_sql" {
 
 # allow reply traffic from the server to the internet on ephemeral ports
 resource "aws_security_group_rule" "engress_sql" {
-  security_group_id = "${aws_db_security_group.wp_db_security_group.id}"
+  security_group_id = "${aws_security_group.wp_db_security_group.id}"
   type              = "egress"
   cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "all"
