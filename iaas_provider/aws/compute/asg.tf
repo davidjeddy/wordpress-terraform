@@ -6,7 +6,7 @@ module "asg" {
   # launch configuration (LC)
   lc_name = "wp_lc"
 
-  image_id      = "${var.wp_images}"
+  image_id      = "${lookup(var.wp_images, var.region)}"
   instance_type = "t2.micro"
 
   # list of security groups for the instance
@@ -18,22 +18,16 @@ module "asg" {
     {
       volume_size = "8"
       volume_type = "gp2"
-    },
+    }
   ]
 
   # auto scaling group
   asg_name                  = "wp_asg"
-  vpc_zone_identifier       = ["${var.availability_zone}"]
+  vpc_zone_identifier       = ["${aws_instance.wp.subnet_id}"]
   health_check_type         = "EC2"
   min_size                  = 1
   max_size                  = 1
   desired_capacity          = 1
   wait_for_capacity_timeout = 0
 
-  tags {
-    Name     = "wp"
-    stage    = "demo"
-    language = "tcp"
-    service  = "asg"
-  }
 }

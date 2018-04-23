@@ -1,7 +1,7 @@
 # Create a new elastic load balancer
 resource "aws_elb" "wp_elb" {
-  availability_zone           = "${lookup(var.availability_zone, var.region)}"
-  name                        = "wp_elb"
+  #availability_zone           = "${lookup(var.availability_zone, var.region)}"
+  name                        = "wp-elb"
   instances                   = ["${aws_instance.wp.id}"]
   cross_zone_load_balancing   = true
   idle_timeout                = 300
