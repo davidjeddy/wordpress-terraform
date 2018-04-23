@@ -1,6 +1,6 @@
-# wordpress web server instance
-resource "aws_instance" "wordpress" {
-  ami = "${lookup(var.wordpress-images, var.region)}"
+# wp web server instance
+resource "aws_instance" "wp" {
+  ami = "${lookup(var.wp-images, var.region)}"
 
   # free tier instance
   instance_type = "t2.micro"
@@ -24,7 +24,7 @@ resource "aws_instance" "wordpress" {
   }
 
   tags {
-    Name     = "wordpress"
+    Name     = "wp"
     stage    = "demo"
     language = "php"
     service  = "web"

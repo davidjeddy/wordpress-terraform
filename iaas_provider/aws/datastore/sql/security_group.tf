@@ -1,6 +1,6 @@
 resource "aws_security_group" "wordpress_db_security_group" {
   name        = "wordpress_db_security_group"
-  description = "Control access to the wordpress database server."
+  description = "Control access to the wp database server."
 }
 
 # TCP

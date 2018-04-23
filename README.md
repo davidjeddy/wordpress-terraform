@@ -1,19 +1,19 @@
-# Wordpress Terraform
+# wp Terraform
 
 ## About
 
-Install Wordpress in the AWS Cloud using Terraform
+Install wp in the AWS Cloud using Terraform
 
-![Wordpress Landing Page](./docs/imgs/wordpress_landing_page.png "Wordpress Landing Page")
+![wp Landing Page](./docs/imgs/wordpress_landing_page.png "wp Landing Page")
 
 
 ## Credit
 
-With assistance from http://architecture.ginocoates.com/2017/01/01/terraforming-wordpress-on-aws/
+With assistance from http://architecture.ginocoates.com/2017/01/01/terraforming-wp-on-aws/
 
 # FAQ
 
-__Q)__ You derp, Wordpress and Terraform are easy, why did you do this?
+__Q)__ You derp, wp and Terraform are easy, why did you do this?
 
 __A)__ 'cause Im not a uber-TF-brain like you; learning takes time and practice.
 
@@ -54,8 +54,8 @@ Download the `aws.pem` keypair to this project root.
 ### Initialize
 ```
 cd /to/your/project/root/parent/directory
-git clone https://github.com/davidjeddy/wordpress-terraform.git
-cd wordpress-terraform
+git clone https://github.com/davidjeddy/wp-terraform.git
+cd wp-terraform
 terraform init
 cp ~/your/downloads/aws.pem ./aws.pem
 ```

@@ -3,7 +3,7 @@ module "compute" {
 
   # config vars
 
-  wordpress-images = "${var.wordpress-images}"
+  wp-images = "${var.wp-images}"
   region           = "${var.region}"
   local_ip         = "${var.local_ip}"
 }
