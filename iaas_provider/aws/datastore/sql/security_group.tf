@@ -11,7 +11,7 @@ resource "aws_security_group" "wp_db_security_group" {
 resource "aws_security_group_rule" "ingress_sql" {
   security_group_id = "${aws_security_group.wp_db_security_group.id}"
   type              = "ingress"
-  cidr_blocks       = ["${var.ec2_instance_wp_private_ips}/32"]
+  cidr_blocks       = ["${var.ec2_instance_wp_private_ips[0]}/32"]
   protocol          = "tcp"
   from_port         = 3306
   to_port           = 3306

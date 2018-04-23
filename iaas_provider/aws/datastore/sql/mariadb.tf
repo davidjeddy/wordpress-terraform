@@ -13,4 +13,11 @@ resource "aws_db_instance" "wp_db" {
   vpc_security_group_ids = [
     "${aws_security_group.wp_db_security_group.name}",
   ]
+
+  tags {
+    Name     = "wp"
+    stage    = "demo"
+    language = "sql"
+    service  = "sql"
+  }
 }
