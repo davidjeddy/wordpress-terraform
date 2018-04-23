@@ -4,8 +4,8 @@ module "compute" {
   # config vars
 
   wp_images = "${var.wp_images}"
-  region           = "${var.region}"
-  local_ip         = "${var.local_ip}"
+  region    = "${var.region}"
+  local_ip  = "${var.local_ip}"
 }
 
 module "dns" {
@@ -17,9 +17,9 @@ module "dns" {
 }
 
 module "datastore" {
-  source "./iaas_provider/aws/datastore/sql/rds/mariadb"
+  source = "./iaas_provider/aws/datastore/sql"
 
   #config vars
-  
-  ec2_private_ip = "${module.ec2.private_ip}"
+
+  ec2_private_ip = "${module.compute.private_ip}"
 }
