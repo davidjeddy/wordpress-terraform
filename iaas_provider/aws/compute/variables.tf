@@ -16,7 +16,7 @@ variable "ssl_cert" {
   type        = "string"
 }
 
-variable "f" {
+variable "ami_images" {
   default = {
     us-east-2 = "ami-1942677c"
   }
