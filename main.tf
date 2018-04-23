@@ -3,9 +3,12 @@ module "compute" {
 
   # config vars
 
+  # EC2
   wp_images = "${var.wp_images}"
   region    = "${var.region}"
   local_ip  = "${var.local_ip}"
+  # ASG
+  ssl_cert = "${var.ssl_cert}"
 }
 
 module "dns" {
