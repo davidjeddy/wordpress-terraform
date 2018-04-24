@@ -4,10 +4,11 @@
 data "aws_elb_service_account" "main" {}
 
 resource "aws_s3_bucket" "elb_logs" {
-  acl    = "private"
-  bucket = "elb-logs-9e33b5e0-a9f7-4834-887f-75499cc43678"
+  acl           = "private"
+  bucket        = "elb-logs-9e33b5e0-a9f7-4834-887f-75499cc43678"
+  force_destroy = true
 
-  policy =<<POLICY
+  policy = <<POLICY
 {
   "Id": "Policy1429136655940",
   "Version": "2012-10-17",

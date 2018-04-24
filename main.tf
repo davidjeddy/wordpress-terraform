@@ -3,17 +3,18 @@ module "compute" {
 
   # config vars
 
+
   # ASG
 
   ssl_cert = "${var.ssl_cert}"
 
   # EC2
 
+  ami_images         = "${var.ami_images}"
   availability_zone  = "${var.availability_zone}"
   availability_zones = "${var.availability_zones}"
-  ami_images         = "${var.ami_images}"
-  region             = "${var.region}"
   local_ip           = "${var.local_ip}"
+  region             = "${var.region}"
   s3_bucket          = "${module.s3.s3_bucket}"
 }
 
@@ -33,25 +34,27 @@ module "datastore" {
   ec2_instance_wp_private_ips = "${module.compute.ec2_instance_wp_private_ips}"
 }
 
-module "s3" {
-  source = "./iaas_provider/aws/storage/s3"
-
-  # config vars
-
-  region  = "${var.region}"
-}
-
 module "efs" {
   source = "./iaas_provider/aws/storage/efs"
 
   # config vars
 
-  subnets = "${var.region}"
-  vpc_id  = "${module.vpc.id}"
+  availability_zones      = "${var.availability_zones}"
+  aws_region              = "${var.region}"
+  aws_route53_dns_zone_id = "${module.dns.zone_id}"
+  security_group_id       = "${aws_security_group.wp_security_group.id}"
+  subnets                 = "${module.vpc.subnets}"
+  vpc_id                  = "${module.vpc.id}"
+}
+
+module "s3" {
+  source = "./iaas_provider/aws/storage/s3"
+
+  # config vars
+
+  region = "${var.region}"
 }
 
 module "vpc" {
   source = "./iaas_provider/aws/network/vpc"
-
-  # config vars
 }

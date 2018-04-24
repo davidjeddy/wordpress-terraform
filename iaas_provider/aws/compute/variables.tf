@@ -43,7 +43,7 @@ variable "local_ip" {
 }
 
 variable "s3_bucket" {
-  default = "tmp"
+  default     = "tmp"
   description = "S3 storage bucket to store ELB logs in."
-  type = "string"
+  type        = "string"
 }

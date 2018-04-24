@@ -37,12 +37,10 @@ resource "aws_elb" "wp_elb" {
     target              = "HTTP:80/"
     interval            = 30
   }
-
   tags {
     Name     = "wp"
     stage    = "demo"
     language = "tcp"
     service  = "elb"
   }
-
 }
