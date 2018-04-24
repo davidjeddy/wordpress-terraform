@@ -3,15 +3,17 @@ module "compute" {
 
   # config vars
 
+
   # ASG
 
   ssl_cert = "${var.ssl_cert}"
 
   # EC2
 
-  ami_images = "${var.ami_images}"
-  region    = "${var.region}"
-  local_ip  = "${var.local_ip}"
+  availability_zones = "${var.availability_zones}"
+  ami_images         = "${var.ami_images}"
+  region             = "${var.region}"
+  local_ip           = "${var.local_ip}"
 }
 
 module "dns" {

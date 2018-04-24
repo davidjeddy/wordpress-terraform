@@ -11,14 +11,14 @@ module "asg" {
 
   # list of security groups for the instance
   security_groups = [
-    "${var.security_group}",
+    "${aws_security_group.wp_security_group.id}",
   ]
 
   root_block_device = [
     {
       volume_size = "8"
       volume_type = "gp2"
-    }
+    },
   ]
 
   # auto scaling group
@@ -29,5 +29,4 @@ module "asg" {
   max_size                  = 1
   desired_capacity          = 1
   wait_for_capacity_timeout = 0
-
 }
