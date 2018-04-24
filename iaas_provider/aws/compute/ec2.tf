@@ -1,13 +1,13 @@
-# wordpress web server instance
-resource "aws_instance" "wordpress" {
-  ami = "${lookup(var.wordpress-images, var.region)}"
+# wp web server instance
+resource "aws_instance" "wp" {
+  ami = "${lookup(var.wp_images, var.region)}"
 
   # free tier instance
   instance_type = "t2.micro"
 
-  # list of securit groups for the instance
-  security_groups = [
-    "${aws_security_group.wordpress_security_group.name}",
+  # list of security groups for the instance
+  vpc_security_group_ids = [
+    "${aws_security_group.wp_security_group.id}"
   ]
 
   availability_zone = "${lookup(var.zones, var.region)}"
@@ -24,7 +24,7 @@ resource "aws_instance" "wordpress" {
   }
 
   tags {
-    Name     = "wordpress"
+    Name     = "wp"
     stage    = "demo"
     language = "php"
     service  = "web"
