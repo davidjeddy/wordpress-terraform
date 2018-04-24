@@ -41,3 +41,9 @@ variable "local_ip" {
   description = "Local IP, used to limit SSH access to the compute instance."
   type        = "string"
 }
+
+variable "s3_bucket" {
+  default = "tmp"
+  description = "S3 storage bucket to store ELB logs in."
+  type = "string"
+}

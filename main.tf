@@ -15,6 +15,7 @@ module "compute" {
   ami_images         = "${var.ami_images}"
   region             = "${var.region}"
   local_ip           = "${var.local_ip}"
+  s3_bucket          = "${module.storage.s3_bucket}"
 }
 
 module "dns" {

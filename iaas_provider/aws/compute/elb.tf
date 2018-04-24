@@ -9,7 +9,7 @@ resource "aws_elb" "wp_elb" {
   connection_draining_timeout = 300
 
   access_logs {
-    bucket        = "${module.storage.elb_logs.name}"
+    bucket        = "${var.s3_bucket}"
     bucket_prefix = ""
     interval      = 60
   }

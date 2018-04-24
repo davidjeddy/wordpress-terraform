@@ -8,25 +8,25 @@ resource "aws_s3_bucket" "elb_logs" {
   bucket = "elb-logs-9e33b5e0-a9f7-4834-887f-75499cc43678"
 
   policy =<<POLICY
-  {
-    "Id": "Policy1429136655940",
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "Stmt1429136633762",
-        "Action": [
-          "s3:PutObject"
-        ],
-        "Effect": "Allow",
-        "Resource": "arn:aws:s3:::elb-logs-9e33b5e0-a9f7-4834-887f-75499cc43678/*",
-        "Principal": {
-          "AWS": [
-            "652711504416"
-          ]
-        }
+{
+  "Id": "Policy1429136655940",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1429136633762",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::elb-logs-9e33b5e0-a9f7-4834-887f-75499cc43678/*",
+      "Principal": {
+        "AWS": [
+           "${data.aws_elb_service_account.main.arn}"
+        ]
       }
-    ]
-  }
+    }
+  ]
+}
 POLICY
 
   region = "${var.region}"
