@@ -3,7 +3,6 @@ module "compute" {
 
   # config vars
 
-
   # ASG
 
   ssl_cert = "${var.ssl_cert}"
@@ -15,7 +14,7 @@ module "compute" {
   ami_images         = "${var.ami_images}"
   region             = "${var.region}"
   local_ip           = "${var.local_ip}"
-  s3_bucket          = "${module.storage.s3_bucket}"
+  s3_bucket          = "${module.s3.s3_bucket}"
 }
 
 module "dns" {
@@ -34,10 +33,25 @@ module "datastore" {
   ec2_instance_wp_private_ips = "${module.compute.ec2_instance_wp_private_ips}"
 }
 
-module "storage" {
+module "s3" {
   source = "./iaas_provider/aws/storage/s3"
 
   # config vars
 
   region  = "${var.region}"
+}
+
+module "efs" {
+  source = "./iaas_provider/aws/storage/efs"
+
+  # config vars
+
+  subnets = "${var.region}"
+  vpc_id  = "${module.vpc.id}"
+}
+
+module "vpc" {
+  source = "./iaas_provider/aws/network/vpc"
+
+  # config vars
 }
