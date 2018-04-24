@@ -28,12 +28,12 @@ variable "ssl_cert" {
 # EC2
 
 variable "availability_zone" {
-  description = "Availablity zones within the region resoures will be provisioned into."
+  description = "Availablity zone single AZ resoures will be provisioned into."
   type        = "string"
 }
 
 variable "availability_zones" {
-  description = "Availablity zones within the region resoures will be provisioned into."
+  description = "Availablity zones multi-AZ resoures will be provisioned into."
   type        = "list"
 }
 
