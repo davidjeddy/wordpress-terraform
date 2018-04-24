@@ -31,7 +31,7 @@ variable "local_ip" {
 }
 
 variable "region" {
-  default     = "us-east-1"
+  default     = "us-east-2"
   description = "The geographic region the resources will be provisioned into."
   type        = "string"
 }

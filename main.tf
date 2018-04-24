@@ -32,3 +32,11 @@ module "datastore" {
 
   ec2_instance_wp_private_ips = "${module.compute.ec2_instance_wp_private_ips}"
 }
+
+module "storage" {
+  source = "./iaas_provider/aws/storage"
+
+  # config vars
+
+  region  = "${var.region}"
+}
