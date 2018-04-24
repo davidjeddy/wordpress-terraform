@@ -7,7 +7,7 @@ variable "ami_images" {
   type        = "map"
 }
 
-variable "availability_zone" {
+variable "availability_zones" {
   default = {
     "us-east-2" = [
       "us-east-2a",

@@ -5,12 +5,15 @@ variable "region" {
   type        = "string"
 }
 
+<<<<<<< HEAD
 variable "security_group" {
   default     = ""
   description = "Security groups to assign the ASG to."
   type        = "string"
 }
 
+=======
+>>>>>>> d16a923ace5364fbc09048deb11f3291ce05bc18
 variable "ssl_cert" {
   description = "The ARN to the SSL/TLS certification."
   type        = "string"
@@ -27,11 +30,7 @@ variable "ami_images" {
 
 # EC2
 
-variable "availability_zone" {
-  default = {
-    "us-east-2" = "us-east-2a"
-  }
-
+variable "availability_zones" {
   description = "Availablity zone within the region resoures will be provisioned into."
   type        = "map"
 }

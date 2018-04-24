@@ -11,7 +11,7 @@ module "asg" {
 
   # list of security groups for the instance
   security_groups = [
-    "${var.security_group}",
+    "${aws_security_group.wp_security_group.id}",
   ]
 
   root_block_device = [
