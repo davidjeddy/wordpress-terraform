@@ -35,7 +35,7 @@ module "datastore" {
 }
 
 module "storage" {
-  source = "./iaas_provider/aws/storage"
+  source = "./iaas_provider/aws/storage/s3"
 
   # config vars
 
