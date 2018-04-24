@@ -10,16 +10,11 @@ module "compute" {
 
   # EC2
 
-<<<<<<< HEAD
-  ami_images = "${var.ami_images}"
-  region     = "${var.region}"
-  local_ip   = "${var.local_ip}"
-=======
+  availability_zone  = "${var.availability_zone}"
   availability_zones = "${var.availability_zones}"
   ami_images         = "${var.ami_images}"
   region             = "${var.region}"
   local_ip           = "${var.local_ip}"
->>>>>>> d16a923ace5364fbc09048deb11f3291ce05bc18
 }
 
 module "dns" {

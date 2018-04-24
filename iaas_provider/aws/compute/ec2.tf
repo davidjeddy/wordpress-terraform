@@ -10,7 +10,7 @@ resource "aws_instance" "wp" {
     "${aws_security_group.wp_security_group.id}",
   ]
 
-  availability_zone = ["${var.availability_zones}[0]"]
+  availability_zone = "${var.availability_zone}"
 
   key_name = "aws"
 
