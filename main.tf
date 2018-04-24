@@ -42,9 +42,10 @@ module "efs" {
   availability_zones      = "${var.availability_zones}"
   aws_region              = "${var.region}"
   aws_route53_dns_zone_id = "${module.dns.zone_id}"
-  security_group_id       = "${aws_security_group.wp_security_group.id}"
   subnets                 = "${module.vpc.subnets}"
   vpc_id                  = "${module.vpc.id}"
+
+  ec2_instance_wp_private_ips = ["${module.compute.ec2_instance_wp_private_ips}"]
 }
 
 module "s3" {

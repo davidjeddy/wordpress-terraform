@@ -6,7 +6,7 @@ module "efs" {
   # required
   availability_zones = ["${var.availability_zones}"]
   aws_region         = "${var.aws_region}"
-  security_groups    = ["${var.security_group_id}"]
+  security_groups    = ["${aws_security_group.wp_efs_security_group.id}"]
   subnets            = "${join(",", var.subnets)}"
   vpc_id             = "${var.vpc_id}"
   zone_id            = "${var.aws_route53_dns_zone_id}"
