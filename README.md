@@ -1,4 +1,4 @@
-# wp Terraform
+# Wordpress Terraform
 
 ## About
 
