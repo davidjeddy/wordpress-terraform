@@ -12,7 +12,7 @@ resource "aws_db_instance" "wp_db" {
 
   # list of security groups for the instance
   vpc_security_group_ids = [
-    "${aws_security_group.wp_db_security_group.id}"
+    "${aws_security_group.wp_db_security_group.id}",
   ]
 
   tags {
